@@ -14,6 +14,7 @@
  * Invoking `processFirstItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'foofoo'.
 */
+
 function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
@@ -27,11 +28,13 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
+ * counter1 declares count within the function scope, whearas counter2 declares count outside of the function scope using closure.
  * 
  * 2. Which of the two uses a closure? How can you tell?
+ * counter2 uses closure since count is defined outside of the function scope.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ * counter1 code would be preferable when count is only needed and referenced inside the scope of the function. counter2 would be preferable if you want the count to reset each time the function is called.
 */
 
 // counter1 code
@@ -43,6 +46,9 @@ function counterMaker() {
 }
 
 const counter1 = counterMaker();
+// console.log(counter1()); //console.logs 0
+// console.log(counter1()); //console.logs 1
+// console.log(counter1()); //console.logs 2
 
 // counter2 code
 let count = 0;
@@ -50,6 +56,10 @@ let count = 0;
 function counter2() {
   return count++;
 }
+
+// console.log(counter2()); //console.logs 0
+// console.log(counter2()); //console.logs 1
+// console.log(counter2()); //console.logs 2
 
 
 /* Task 2: inning() 

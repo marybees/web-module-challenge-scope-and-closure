@@ -68,19 +68,12 @@ Write a function called `inning` that returns a random number of points that a t
 
 
 function inning() {
-  function calculateScore() {
     let score = 0
-    score = Math.floor(Math.random() * 2);
-    return score++;
-  }
-  return calculateScore();
+    score = Math.floor(Math.random() * 3);
+    return score;
 }
 
-console.log(inning()); //points  scored in inning 1
-console.log(inning()); //points scored in inning 1 + inning 2
-console.log(inning()); //points scored in inning 1 + inning 2 + inning 3
-console.log(inning()); //points scored in inning 1 + inning 2 + inning 3
-console.log(inning()); //points scored in inning 1 + inning 2 + inning 3
+console.log(inning()); 
 
 /* Task 3: finalScore()
 

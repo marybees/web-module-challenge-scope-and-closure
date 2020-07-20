@@ -90,16 +90,13 @@ finalScore(inning, 9) might return:
 */ 
 
 function finalScore(inning, numberOfInnings) {
-  function inning() {
-    let score = 0
-    score = Math.floor(Math.random() * 3);
-    return score;
-  }
-  let inningScores = [];
+  let homeScore = 0;
+  let awayScore = 0;
   for (let i = 0; i < numberOfInnings; i++) {
-  inningScores.push(inning())
+    homeScore = homeScore + inning();
+    awayScore = awayScore + inning();
   }
-  return inningScores;
+  return {home: homeScore, away: awayScore};
 }
 
 console.log(finalScore(inning, 9));

@@ -89,11 +89,22 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(inning, numberOfInnings) {
+  function inning() {
+    let score = 0
+    score = Math.floor(Math.random() * 3);
+    return score;
+  }
+  let inningScores = [];
+  for (let i = 0; i < numberOfInnings; i++) {
+  inningScores.push(inning())
+  }
+  return inningScores;
 }
+
+console.log(finalScore(inning, 9));
+
+
 
 /* Task 4: 
 
@@ -119,5 +130,4 @@ Final Score: awayTeam - homeTeam */
 function scoreboard(/* CODE HERE */) {
   /* CODE HERE */
 }
-
 

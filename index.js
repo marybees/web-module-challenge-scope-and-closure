@@ -144,6 +144,7 @@ function scoreboard(getInningScore, inning, numberOfInnings) {
     awayScore = awayScore + inning();
     getInningScore(awayScore, homeScore, i+1);
   }
+  console.log(`Final Score: ${awayScore} - ${homeScore}`);
 }
 
 scoreboard(getInningScore, inning, 9);

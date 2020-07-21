@@ -124,15 +124,17 @@ and returns the score at each pont in the game, like so:
 Final Score: awayTeam - homeTeam */
 
 function getInningScore(awayScore, homeScore, inningNumber) {
+  let suffix = " ";
   if (inningNumber === 1) {
-    console.log(`${inningNumber}st inning: ${awayScore} - ${homeScore}`);
+    suffix = "st"; 
   } else if (inningNumber === 2) {
-    console.log(`${inningNumber}nd inning: ${awayScore} - ${homeScore}`);
+    suffix = "nd"; 
   } else if (inningNumber === 3) {
-    console.log(`${inningNumber}rd inning: ${awayScore} - ${homeScore}`);
+    suffix = "rd";
   } else {
-    console.log(`${inningNumber}th inning: ${awayScore} - ${homeScore}`);
+    suffix = "th";
   }
+  console.log(`${inningNumber}${suffix} inning: ${awayScore} - ${homeScore}`);
   return inningNumber;
 }
 
